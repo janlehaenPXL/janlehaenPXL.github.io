@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jan Lehaen | Programmeur</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    
 </head>
-<body>
+<body class="no-scroll">
 
     <header>
         <nav>
-            <h1 class="logo">JanLehaen.be</h1>
+            <h1 class="logo">Jan Lehaen</h1>
 
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -22,17 +24,22 @@
 
     <main>
         <section class="hero">
-            <img src="assets/profile.jpg" alt="Profielfoto" class="profile-img">
+            <img src="assets/Profielfoto.jpeg" alt="Profielfoto" class="profile-img">
 
             <div class="hero-text">
                 <h2>Hallo, ik ben Jan 👋</h2>
 
                 <p>
-                    Student programmeur met interesse in webdevelopment,
-                    software engineering en moderne technologie.
+                    <span id="age"></span> student aan PXL, gepassioneerd door webdevelopment en software engineering. 
+                    Met C#, HTML, CSS, JavaScript en SQL bouw ik graag heldere, moderne en slimme oplossingen. 
+                    Ik ben leergierig, gefocust en altijd bezig met groeien als ontwikkelaar.
                 </p>
 
                 <a href="cv.html" class="btn">Bekijk mijn CV</a>
+                <a href="https://pxl-werkplekleren.github.io/portfolio-janlehaenPXL/index.html" class="btn" target="_blank">Portfolio</a>
+                <a id="LinkinMobile" href="https://www.linkedin.com/in/jan-lehaen/" class="btnLogo" target="_blank"><img id="LinkinLogo" src="assets/linkedin.png"></a>
+                <a id="LinkinText" href="https://www.linkedin.com/in/jan-lehaen/" class="btn" target="_blank">LinkedIn</a>
+                
             </div>
         </section>
 
@@ -40,28 +47,82 @@
             <h2>Mijn Skills</h2>
 
             <div class="skill-cards">
-                <div class="card">
-                    <h3>HTML</h3>
-                    <p>Structuur en semantische websites bouwen.</p>
-                </div>
 
-                <div class="card">
-                    <h3>CSS</h3>
-                    <p>Moderne layouts, animaties en responsive design.</p>
-                </div>
+    <div class="card">
+        <h3>HTML</h3>
+        <p>Semantische en gestructureerde webpagina’s bouwen.</p>
 
-                <div class="card">
-                    <h3>JavaScript</h3>
-                    <p>Interactieve websites en dynamische functionaliteit.</p>
-                </div>
-            </div>
+        <div class="skill-level">
+            <div class="skill-fill html"></div>
+        </div>
+
+        
+    </div>
+
+    <div class="card">
+        <h3>CSS</h3>
+        <p>Responsive layouts, animaties en moderne styling.</p>
+
+        <div class="skill-level">
+            <div class="skill-fill css"></div>
+        </div>
+
+        
+    </div>
+
+    <div class="card">
+        <h3>JavaScript</h3>
+        <p>Interactieve websites en dynamische functionaliteit.</p>
+
+        <div class="skill-level">
+            <div class="skill-fill js"></div>
+        </div>
+
+        
+    </div>
+
+    <div class="card">
+        <h3>C#</h3>
+        <p>Objectgeoriënteerd programmeren en applicatieontwikkeling.</p>
+
+        <div class="skill-level">
+            <div class="skill-fill csharp"></div>
+        </div>
+
+        
+    </div>
+
+    <div class="card">
+        <h3>SQL</h3>
+        <p>Databases ontwerpen, beheren en queries schrijven.</p>
+
+        <div class="skill-level">
+            <div class="skill-fill sql"></div>
+        </div>
+
+        
+    </div>
+
+    <div class="card">
+        <h3>Vue.js</h3>
+        <p>Moderne frontend interfaces bouwen met componenten.</p>
+
+        <div class="skill-level">
+            <div class="skill-fill vue"></div>
+        </div>
+
+        
+    </div>
+
+</div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 Jan Lehaen - Alle rechten voorbehouden</p>
+        Gemaakt met passie voor code. © <span id="year"></span> Jan
+
     </footer>
 
-    <script src="script.js"></script>
+    
 </body>
 </html>

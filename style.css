@@ -1,21 +1,77 @@
+/* -------------------- RESET -------------------- */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: white;
-    line-height: 1.6;
+/* -------------------- ROOT VARIABLES -------------------- */
+
+:root {
+    --bg-dark: #0f172a;
+    --bg-darker: #111827;
+    --bg-card: #1e293b;
+
+    --accent: #38bdf8;
+    --text-light: #ffffff;
+
+    --skill-bg: #334155;
 }
 
+/* -------------------- GLOBAL -------------------- */
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
+
+body {
+    
+    background-image: url("assets/BG1e293b.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-color: var(--bg-card);
+    background-blend-mode: overlay;
+
+    border-radius: 25px;
+    
+    font-family: Arial, sans-serif;
+    color: var(--text-light);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex: 1;
+    
+}
+
+/* Universele section spacing (minder ruimte) */
+section {
+    padding: 40px 10%;
+}
+
+footer {
+    background: var(--bg-darker);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+
+/* -------------------- HEADER -------------------- */
+
 header {
-    background: #111827;
+    background: var(--bg-darker);
     padding: 20px 10%;
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 
 nav {
@@ -25,7 +81,9 @@ nav {
 }
 
 .logo {
-    color: #38bdf8;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.3rem;
 }
 
 .nav-links {
@@ -35,28 +93,29 @@ nav {
 }
 
 .nav-links a {
-    color: white;
+    color: var(--text-light);
     text-decoration: none;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #38bdf8;
+    color: var(--accent);
 }
+
+/* -------------------- HERO SECTION -------------------- */
 
 .hero {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 50px;
-    min-height: 80vh;
-    padding: 50px 10%;
+    min-height: 50vh; 
 }
 
 .profile-img {
-    width: 250px;
+    width: 350px;
     border-radius: 50%;
-    border: 5px solid #38bdf8;
+    border: 5px solid var(--accent);
 }
 
 .hero-text {
@@ -71,46 +130,400 @@ nav {
 .btn {
     display: inline-block;
     margin-top: 20px;
-    background: #38bdf8;
+    margin-right: 20px;
+    background: var(--accent);
     color: black;
     padding: 12px 24px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
+    transition: transform 0.3s;
 }
 
+.btnLogo {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 20px;
+    background: var(--accent);
+    color: black;
+    padding: 5px 5px; 
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s;
+    
+    line-height: 0; /* voorkomt extra ruimte rond het logo */
+}
+
+.btnLogo:hover {
+    transform: translateY(-3px);
+}
+
+.btnLogo img,
+.btnLogo svg {
+    height: 40px; /* zelfde visuele hoogte als de tekst in .btn */
+    width: auto;
+}
+
+.btn, .btnLogo {
+    vertical-align: middle;
+}
+s
 .btn:hover {
     transform: translateY(-3px);
 }
 
-.skills {
-    padding: 80px 10%;
-}
+/* -------------------- SKILLS SECTION -------------------- */
 
 .skills h2 {
     margin-bottom: 40px;
     text-align: center;
 }
 
+.skill-level {
+    width: 100%;
+    height: 10px;
+    background: var(--skill-bg);
+    border-radius: 20px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    background: var(--accent);
+    animation: loadSkill 2s ease;
+}
+
+/* Skill percentages */
+.html { width: 90%; }
+.css { width: 85%; }
+.js { width: 80%; }
+.csharp { width: 75%; }
+.sql { width: 70%; }
+.vue { width: 65%; }
+
+@keyframes loadSkill {
+    from { width: 0; }
+}
+
+/* -------------------- SKILL CARDS -------------------- */
+
 .skill-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
+.skill-cards > * {
+    flex: 1 1 250px;
+}
+
 .card {
-    background: #1e293b;
+    background: var(--bg-card);
     padding: 30px;
     border-radius: 15px;
-    transition: 0.3s;
+    transition: transform 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
 }
 
-.page-container {
-    padding: 80px 10%;
-    min-height: 80vh;
+
+
+
+/* -------------------- CV.HTML -------------------- */
+
+
+#intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    min-height: 25vh;
+}
+
+#introtextbig {
+    max-width: 600px;
+}
+
+#introtextbig h1,
+#introtextsmall h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+#introtextbig p,
+#introtextsmall p {
+    margin-bottom: 10px;
+    color: #cbd5e1;
+}
+
+/* -------------------- MIDDLE CONTAINER -------------------- */
+
+#middleContainer {
+    display: flex;
+    gap: 40px;
+    padding: 40px 10%;
+    align-items: flex-start;
+}
+
+.aboutMeBox {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0;
+}
+
+.experiencesBox {
+    flex: 2 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0;
+}
+
+/* -------------------- ABOUT ME -------------------- */
+
+#about-me,
+#soft-skills,
+#hobbys,
+#interests {
+    background: var(--bg-card);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+#about-me h2,
+#soft-skills h2,
+#hobbys h2,
+#interests h2 {
+    margin-bottom: 10px;
+}
+
+#about-me hr,
+#soft-skills hr,
+#hobbys hr,
+#interests hr {
+    border: none;
+    border-top: 1px solid var(--accent);
+    margin-bottom: 15px;
+}
+
+#about-me ul {
+    padding-left: 5px;
+}
+
+#about-me h4 {
+    color: var(--accent);
+    margin-top: 5px;
+}
+
+/* -------------------- LANGUAGE LIST -------------------- */
+
+#languagelist {
+    background: var(--bg-card);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.language {
+    flex: 1;
+}
+
+.languagelist-item {
+    color: #cbd5e1;
+}
+
+.is-language {
+    font-weight: bold;
+    color: var(--text-light) !important; /*Forceert de kleur!*/
+}
+
+/* -------------------- PROGRESS BARS -------------------- */
+
+#soft-skills ul {
+    padding-left: 5px;
+}
+
+#soft-skills li {
+    margin-top: 12px;
+    color: #cbd5e1;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--skill-bg);
+    border-radius: 20px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.progress-indicator {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 20px;
+    animation: loadSkill 2s ease;
+}
+
+.is-90 { width: 90%; }
+.is-75 { width: 75%; }
+.is-60 { width: 60%; }
+
+/* -------------------- HOBBIES -------------------- */
+
+#hobbys ul {
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 8px;
+}
+
+#hobbys li {
+    color: #cbd5e1;
+    padding: 6px 10px;
+    background: var(--skill-bg);
+    border-radius: 8px;
+}
+
+/* -------------------- TIMELINE -------------------- */
+
+.experiencesBox h2 {
+    margin-bottom: 10px;
+}
+
+.experiencesBox hr {
+    border: none;
+    border-top: 1px solid var(--accent);
+    margin-bottom: 20px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.timeline .item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 16px 20px;
+    border-left: 3px solid var(--accent);
+}
+
+.timeline .year {
+    color: var(--accent);
+    font-weight: bold;
+    min-width: 90px;
+    font-size: 0.9rem;
+    padding-top: 3px;
+}
+
+.timeline .content h3 {
+    margin-bottom: 4px;
+}
+
+.timeline .content p {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+}
+
+/* -------------------- WORK EXPERIENCE -------------------- */
+
+#workskills {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 5px;
+}
+
+.employer {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+.employer:hover {
+    color: var(--text-light);
+}
+
+.arrow {
+    width: 16px;
+    height: 16px;
+}
+
+.function {
+    color: var(--text-light);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.tasks {
+    color: #cbd5e1;
+    font-size: 0.875rem;
+    margin-bottom: 4px;
+}
+
+.workListLine {
+    border: none;
+    border-top: 1px solid var(--skill-bg);
+    margin: 10px 0;
+}
+
+
+
+
+/* -------------------- MEDIAQUERY -------------------- */
+
+/* Desktop */
+@media screen and (min-width: 1194px) {
+    #introtextsmall, #LinkinMobile {
+        display: none;
+    }
+}
+
+/* Tablet (incl. iPad Pro landscape) */
+@media screen and (min-width: 576px) and (max-width: 1194px) {
+    #introtextsmall, #LinkinText {
+        display: none;
+    }
+}
+
+/* Smartphone */
+@media screen and (max-width: 576px) {
+    #intro {
+        display: flex;
+        flex-direction: column;
+        font-size: medium;
+        font-style: italic;
+        text-align: center;
+    }
+    #LinkinText {
+        display: none;
+    }
+    .no-scroll {
+    overflow: scroll ;
+    height: 100vh;
+}
+}
+
+/* Landscape op kleine schermen */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    #intro {
+        min-height: auto;
+    }
 }

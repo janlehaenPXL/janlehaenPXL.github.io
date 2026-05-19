@@ -10,3 +10,15 @@ if (form) {
         form.reset();
     });
 }
+
+// Leeftijd in tekst langs foto
+const birthYear = 1994;
+const currentYear = new Date().getFullYear();
+const age = currentYear - birthYear;
+
+const ageEl = document.getElementById("age");
+if (ageEl) ageEl.textContent = `(${age} jaar)`;
+
+// Jaartal in footer
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = currentYear;
