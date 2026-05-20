@@ -24,7 +24,9 @@
     overflow: hidden;
     height: 100vh;
 }
-
+*{
+    list-style: none;
+}
 
 body {
     
@@ -234,8 +236,6 @@ s
 
 
 /* -------------------- CV.HTML -------------------- */
-
-
 #intro {
     display: flex;
     align-items: center;
@@ -258,6 +258,70 @@ s
 #introtextsmall p {
     margin-bottom: 10px;
     color: #cbd5e1;
+}
+/* -------------------- LANGUAGE LIST -------------------- */
+
+#languagelist {
+    background: var(--bg-card);
+    border-radius: 15px;
+    padding: 25px;
+}
+
+#languagelist h2 {
+    margin-bottom: 10px;
+}
+
+#languagelist hr {
+    border: none;
+    border-top: 1px solid var(--accent);
+    margin-bottom: 15px;
+}
+
+#languagelist .language-table {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--skill-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+
+#languagelist .language {
+    flex: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-right: 1px solid var(--skill-bg);
+}
+
+#languagelist .language:last-child {
+    border-right: none;
+}
+
+#languagelist .languagelistIndex {
+    background: var(--skill-bg);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--skill-bg);
+    white-space: nowrap;
+}
+
+#languagelist .languagelist-item {
+    padding: 7px 12px;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--skill-bg);
+}
+
+#languagelist .languagelist-item:last-child {
+    border-bottom: none;
+}
+
+#languagelist .languagelist-item.is-language {
+    font-weight: bold;
+    color: var(--text-light);
 }
 
 /* -------------------- MIDDLE CONTAINER -------------------- */
@@ -487,6 +551,162 @@ s
 
 
 
+
+/* -------------------- CONTACT SECTION -------------------- */
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80vh;
+    padding: 60px 10%;
+}
+
+.contact-card {
+    background: var(--bg-card);
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 680px;
+}
+
+.contact-card h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contact-card hr {
+    border: none;
+    border-top: 1px solid var(--accent);
+    margin-bottom: 20px;
+}
+
+.contact-intro {
+    color: #cbd5e1;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+/* -------------------- FORM GROUPS -------------------- */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--accent);
+    letter-spacing: 0.03em;
+}
+
+.form-group input,
+.form-group textarea {
+    background: var(--skill-bg);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: var(--text-light);
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s, background 0.3s;
+    resize: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #64748b;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+    background: #253348;
+}
+
+.form-group input.invalid,
+.form-group textarea.invalid {
+    border-color: #f87171;
+}
+
+/* -------------------- ERROR MESSAGES -------------------- */
+
+.error-msg {
+    color: #f87171;
+    font-size: 0.8rem;
+    display: none;
+}
+
+.error-msg.visible {
+    display: block;
+}
+
+/* -------------------- SUBMIT BUTTON -------------------- */
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--accent);
+    color: #0f172a;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+    margin-top: 8px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* -------------------- SUCCESS MESSAGE -------------------- */
+
+.success-msg {
+    margin-top: 24px;
+    background: #134e2a;
+    color: #4ade80;
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 0.95rem;
+    text-align: center;
+    border: 1px solid #166534;
+}
+
+.hidden {
+    display: none;
+}
+
+/* -------------------- MEDIAQUERY CONTACT -------------------- */
+
+@media screen and (max-width: 576px) {
+    .contact-section {
+        padding: 30px 5%;
+    }
+
+    .contact-card {
+        padding: 25px 20px;
+    }
+
+    .contact-card h1 {
+        font-size: 1.6rem;
+    }
+}
+
+
+
 /* -------------------- MEDIAQUERY -------------------- */
 
 /* Desktop */
@@ -527,3 +747,4 @@ s
         min-height: auto;
     }
 }
+
