@@ -19,10 +19,7 @@
 }
 
 /* -------------------- GLOBAL -------------------- */
-.no-scroll {
-    overflow: hidden;
-    height: 100vh;
-}
+
 
 
 
@@ -41,6 +38,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-attachment: fixed;
+    overflow-y: auto;
 }
 
 main {
@@ -695,10 +693,6 @@ nav {
         padding: 20px 5%;
     }
   
-    .no-scroll {
-        overflow: scroll;
-        height: 100vh;
-    }
      .hamburger {
         display: flex;
     }
