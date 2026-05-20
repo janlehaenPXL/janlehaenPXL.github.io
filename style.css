@@ -682,6 +682,10 @@ nav {
     #introtextsmall, #LinkinText {
         display: none;
     }
+
+    #LinkinMobile {
+        display: inline-block;
+    }
 }
 
 /* -------------------- SMARTPHONE -------------------- */
