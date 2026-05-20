@@ -78,3 +78,22 @@ if (form) {
         }
     });
 }
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('is-open');
+        navLinks.classList.toggle('is-open');
+    });
+
+    // Sluit menu bij klikken op een link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('is-open');
+            navLinks.classList.remove('is-open');
+        });
+    });
+}
